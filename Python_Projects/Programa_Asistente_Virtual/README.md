@@ -1,1 +1,1 @@
-
+Este programa funciona como un asistente virutal el cual reconoce voz y responde a travez de sonido. El mismo puede realizar diferentes tareas como abrir el navegador en una busqueda en especfico, abrir el video de YouTube que estabas buscando o devolverte una definicion de Wikipedia, entre otras tareas
