@@ -1,1 +1,1 @@
-
+Este proyecto recrea un mercado de criptomoneda con los diferentes usuarios los cuales comparten caracteristicas por la herencia pero tiene sus propios metodos y atributos. Ademas de sus test asociados a la hora de controlar las diferentes clases y metodos
