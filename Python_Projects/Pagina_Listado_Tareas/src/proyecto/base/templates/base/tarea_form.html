@@ -1,0 +1,19 @@
+{% extends 'base/principal.html' %}
+{% block content %}
+
+<div class ="barra-sup">
+    <a href = "{% url 'tareas' %}">&#x1F860; Volver</a>
+</div>
+
+<div class="cuerpo-form">
+  <form method="post" action=""> <!--Creacion de un formulario, al ser metodo post significa que carga algo y action es a
+                                 donde lo manda, como esta vacio es a la misma pagina-->
+    {% csrf_token %} <!--Un control de seguridad para los sitios web-->
+    {{form.as_p}}
+    <input class = "boton" type="submit" value="Enviar"> <!--Boton para enviar una vez terminado el formulario-->
+  </form>
+
+</div>
+
+
+{% endblock content %}

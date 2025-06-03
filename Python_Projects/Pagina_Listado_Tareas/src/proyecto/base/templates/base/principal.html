@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Es una pagina "padre" de la que el resto de paginas heredan sus estilos-->
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Pendientes</title>
+    <!--Codigo para utilizar un tipo de fuente externa-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Forma de agregar estilo a las paginas-->
+    <style>
+        body {
+            background-color: #E5D4D1;
+            font-family: 'Abel', sans-serif;
+            paddin-top: 60px;
+        }
+        /*Esto funciona como un contenedor para los datos de mi pagina*/
+        .container{
+            max-width: 550px;
+            margin-top: 60px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            background-color:#E1DFDE;
+            -webkit-box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
+            box-shadow:2px 2px 13px -4px rgba(0,0,0,0.21);
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6{
+            font-family:"Lato", sans-serif;
+        }
+
+        a,
+        p{
+            color:#900C3F;
+        }
+
+        .barra-sup{
+            display: flex;
+            justify-content: space-between;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            background: linear-gradient(90deg, #4D9FE3 0%, #3A8ACC 43%, #3A8ACC 100%);
+        }
+
+        .barra-sup a{
+            color: #ffffff;
+        }
+
+        .titulo-tarea a{
+            text-decoration: none;
+        }
+
+        .tarea{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #ffffff;
+            border-top: 1px solid rgb(225,225,225);
+        }
+
+        .enlace-eliminar{
+            text-decoration: none;
+            font-weight: 900;
+            color: #EA4220;
+            font-size: 22px;
+            line-height: 0;
+        }
+
+        /*Forma de poner estilo a un id*/
+        #agregar-buscar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        #enlace-agregar{
+            color: #11d61d;
+            text-decoration: none;
+            font-size: 42px;
+            text-shadow: 1px 1px #12ba1c;
+        }
+
+        /*Afecta a todas las areas de introduccion de texto*/
+        input[type = text],
+        input[type = password],
+        textarea{
+            border: 1px solid #EB796F;
+            border-raidus: 5px;
+            padding: 10px;
+            width: 90%;
+        }
+
+        /*Afecta a las etiquetas*/
+        label{
+            padding-top: 10px !important;
+            display: block;
+        }
+
+        .boton{
+            border: 1px solid #EB796F;
+            background-color: #FAFAFA;
+            color: #EB796F;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .cuerpo-form{
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "container">   <!--Etiqueta contenedora-->
+        {% block content %} <!--Utilizada para envolver a un bloque bajo la misma-->
+
+        {% endblock content %}
+    </div>
+</body>
+</html>

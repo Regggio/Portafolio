@@ -1,0 +1,49 @@
+{% extends 'base/principal.html' %}
+{% block content %}
+
+<div class="barra-sup">
+    <div>
+        <!-- "|title" se encarga que el nombre de usuario siempre aparezca en mayus-->
+        <h1>Hola {{request.user|title}}</h1>
+        <!-- <i> Se encarga de que aparezca en cursiva y pluralize es para que le ponga la S si hay mas de una tarea-->
+        <h3 style = "margin:0">Tienes <i>{{count}}</i> tarea{{count|pluralize}} incompleta{{count|pluralize}}</h3>
+    </div>
+    {% if request.user.is_authenticated %} <!-- Se fija si el usuario esta logeado-->
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <input type="submit" value="Salir">
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}">Ingresar</a>
+    {% endif %}
+</div>
+
+<div id="agregar-buscar">
+    <form method = "get" style = "margin-top: 20px; display: flex;"> <!-- Es metodo get ya que funciona como un buscador-->
+        <input type = 'text' name ="area-buscar" value = {{valor_buscado}}>
+        <input class = "boton" type = "submit" value = "Buscar">
+    </form>
+    <a id ="enlace-agregar" href = "{% url 'crear-tarea' %}">&#x1F7A5;</a>
+
+</div>
+
+
+<div class = "items-tarea">
+    <!-- Cracion de un loop for en django-->
+    {% for tarea in tareas %}
+    <div class = "tarea">
+        <div class = 'titulo-tarea'>
+            <a href = "{% url 'editar-tarea' tarea.id %}">{{tarea}}</a>
+        </div>
+    <a class="enlace-eliminar" href="{% url 'eliminar-tarea' tarea.id %}">&#x2A2F;</a>
+    </div>
+
+    <!--Creacion de un if en django-->
+    {% empty%}
+        <h3> No hay elementos en la lista</h3>
+
+    {% endfor %}
+
+</div>
+
+{% endblock content %}
